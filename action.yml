@@ -1,4 +1,4 @@
-name: GitLab Runner Service
+name: GitLab Runner
 description: 'Runs a gitlab runner privileged mode for a gitlab job'
 author: 'Ederson Brilhante'
 inputs:
