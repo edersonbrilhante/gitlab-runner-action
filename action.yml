@@ -1,31 +1,31 @@
 name: GitLab Runner Service
-description: 'Runs a gitlab runner privileged mode for a gitlab job'
+description: 'Runs a gitlab runner'
 author: 'Ederson Brilhante'
-inputs:
-  registration_token:
-    description: 'registration token'
-    required: true
-  runner_name:
-    description: 'gitlab runner name'
-    required: true
-  tag_list:
-    description: 'tag list'
-    required: true
-  docker_image:
-    description: 'docker image'
-    required: false
-    default: 'docker:19.03.12'
 branding:
   icon: 'server'
   color: 'purple'
+inputs:
+  registration-token:
+    description: 'Registration token'
+    required: true
+  name:
+    description: 'Runner name'
+    required: true
+  tag-list:
+    description: 'Tag list to bind with the runner'
+    required: true
+  docker-image:
+    description: 'Docker image used by runner'
+    required: false
+    default: 'docker:19.03.12'
+  run-untagged:
+    description: "Parameter that allows or not to pick untagged jobs"
+    required: false
+    default: 'true'
+  access-level:
+    description: 'Parameter to create or not a protected runner'
+    required: false
+    default: "not_protected"
 runs:
-  using: "composite"
-  steps:
-    - run: |
-        ${{ github.action_path }}/gitlab-runner.sh
-      env:
-        REGISTRATION_TOKEN: ${{ inputs.registration_token }}
-        DOCKER_IMAGE: ${{ inputs.docker_image }}
-        RUNNER_NAME: ${{ inputs.runner_name }}
-        TAG_LIST: ${{ inputs.tag_list }}
-      shell: bash
+  using: 'node12'
+  main: 'dist/index.js'
