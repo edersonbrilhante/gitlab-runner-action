@@ -28,4 +28,4 @@ inputs:
     default: "not_protected"
 runs:
   using: 'node12'
-  main: 'index.js'
+  main: 'dist/index.js'
