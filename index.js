@@ -1,5 +1,6 @@
 const core = require('@actions/core');
 const { exec } = require('@actions/exec');
+const path = require("path");
 
 async function registerRunnerCmd() {
   let cmdArgs = [];
@@ -54,8 +55,7 @@ async function stopRunnerCmd() {
 }
 
 async function checkJob(){
-  let cmdArgs = []
-  await exec(`./gitlab-runner-action/check-job.sh`)
+  await exec(`${path.resolve(__dirname, "dist")}/check-job.sh`)
 }
 
 async function registerRunner() {

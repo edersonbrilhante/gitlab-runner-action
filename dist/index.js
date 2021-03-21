@@ -7,6 +7,7 @@ module.exports =
 
 const core = __nccwpck_require__(127);
 const { exec } = __nccwpck_require__(49);
+const path = __nccwpck_require__(622);
 
 async function registerRunnerCmd() {
   let cmdArgs = [];
@@ -61,8 +62,7 @@ async function stopRunnerCmd() {
 }
 
 async function checkJob(){
-  let cmdArgs = []
-  await exec(`./gitlab-runner-action/check-job.sh`)
+  await exec(__nccwpck_require__.ab + "check-job.sh")
 }
 
 async function registerRunner() {

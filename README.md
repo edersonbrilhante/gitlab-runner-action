@@ -36,6 +36,6 @@ jobs:
         with:
           registration-token: ${{ secrets.GITLAB_REGISTRATION_TOKEN }}
           docker-image: "docker:19.03.12"
-          runner_name: ${{ github.run_id }}
+          name: ${{ github.run_id }}
           tag-list: "crosscicd"
 ```
