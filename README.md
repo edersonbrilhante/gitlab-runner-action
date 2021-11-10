@@ -1,5 +1,5 @@
 # Gitlab Runner Action
-This actions allows have a gitlab runner up to ~60gb
+This action allow you have a gitlab runner up to ~60gb
 
 ## Action Inputs
 
