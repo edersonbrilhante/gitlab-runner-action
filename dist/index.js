@@ -18,7 +18,7 @@ async function registerRunnerCmd() {
   cmdArgs.push(`--non-interactive`)
   cmdArgs.push(`--executor`, `docker`)
   cmdArgs.push(`--docker-image`, core.getInput('docker-image'))
-  cmdArgs.push(`--url`, `https://gitlab.com/`)
+  cmdArgs.push(`--url`, core.getInput('gitlab-instance'))
   cmdArgs.push(`--registration-token`, core.getInput('registration-token'))
   cmdArgs.push(`--name`, core.getInput('name'))
   cmdArgs.push(`--tag-list`, core.getInput('tag-list'))

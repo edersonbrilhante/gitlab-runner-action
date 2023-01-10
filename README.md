@@ -5,6 +5,7 @@ This action allow you have a gitlab runner up to ~60gb
 
 | Input Name | Description | Required | Enum Values | Default Value |
 |-----------------|-------------|---------------|---------------|---------------|
+| `gitlab-instance` | Gitlab instance | No | N/A | https://gitlab.com/ |
 | `registration-token` | Registration token | Yes | N/A | N/A |
 | `name` | Runner name | Yes | N/A | N/A |
 | `tag-list` | Tag list to bind with the runner | Yes | N/A | N/A |
